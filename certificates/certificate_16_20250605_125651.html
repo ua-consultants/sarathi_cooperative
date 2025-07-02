@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Share Certificate</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        .certificate {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm;
+            box-sizing: border-box;
+            position: relative;
+        }
+        @media print {
+            body { margin: 0; padding: 0; }
+            .no-print { display: none; }
+        }
+        .print-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">Print Certificate</button>
+    <div class="certificate">
+        <h1>Certificate content will be rendered here based on the PowerPoint template</h1>
+        <p>This is a simplified version. For exact design replication, consider using:</p>
+        <ul>
+            <li>CloudConvert API (recommended for production)</li>
+            <li>ConvertAPI</li>
+            <li>Local LibreOffice installation (VPS hosting)</li>
+        </ul>
+    </div>
+    
+    <script>
+        // Auto-print on load (optional)
+        // window.onload = function() { window.print(); }
+    </script>
+</body>
+</html>

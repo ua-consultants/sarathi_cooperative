@@ -1,0 +1,143 @@
+:root {
+    --sidebar-width: 250px;
+    --navbar-height: 60px;
+    --primary-color: #0d6efd;
+    --sidebar-bg: #212529;
+}
+
+body {
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    height: var(--navbar-height);
+    background: var(--primary-color) !important;
+    padding: 0 1rem;
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1001;
+}
+
+.sidebar-header {
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-header .logo {
+    max-height: 40px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.8);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: calc(var(--navbar-height) + 1.5rem) 1.5rem 1.5rem;
+    min-height: 100vh;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .navbar, .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+/* Stats icon */
+.stats-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.stats-icon i {
+    font-size: 24px;
+}
+
+/* Card header */
+.card-header {
+    border-bottom: 1px solid #eee;
+    padding: 1rem;
+}
+
+/* List group */
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
